@@ -17,12 +17,20 @@ createApp({
                done: false,
             },
          ],
+         newTodo: {
+            text: '',
+            done: false,
+         },
       };
    },
    methods: {
       // metodi vue js
       removeTodo(index) {
          this.todoList.splice(index, 1);
+      },
+      addTodo() {
+         this.todoList.push(this.newTodo);
+         console.log(this.newTodo);
       },
    },
 }).mount('#app');
