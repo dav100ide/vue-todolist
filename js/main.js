@@ -36,5 +36,10 @@ createApp({
          this.todoList.push(newTodo);
          this.newTodo.text = null;
       },
+      doneSwitch(index) {
+         let doneStatus = this.todoList[index].done;
+         doneStatus === true ? (doneStatus = false) : (doneStatus = true);
+         console.log(doneStatus);
+      },
    },
 }).mount('#app');
