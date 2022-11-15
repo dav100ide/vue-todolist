@@ -40,10 +40,7 @@ createApp({
          }
       },
       doneSwitch(index) {
-         // switcha true a false e viceversa
-         let doneStatus = this.todoList[index].done;
-         doneStatus === true ? (this.todoList[index].done = false) : (this.todoList[index].done = true);
-         console.log(this.todoList[index].done);
+         this.todoList[index].done = !this.todoList[index].done;
       },
    },
 }).mount('#app');
