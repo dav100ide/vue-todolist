@@ -57,6 +57,7 @@ body {
 .todo-text,
 .todo-icon {
    cursor: pointer;
+   user-select: none;
 }
 /* buttone */
 .btn-enter {

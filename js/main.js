@@ -30,6 +30,7 @@ createApp({
       },
       addTodo(text) {
          if (text !== null) {
+            //input validation
             const newTodo = {
                text: text,
                done: false,
@@ -38,6 +39,11 @@ createApp({
             this.newTodo.text = null;
          }
       },
-      doneSwitch(index) {},
+      doneSwitch(index) {
+         // switcha true a false e viceversa
+         let doneStatus = this.todoList[index].done;
+         doneStatus === true ? (this.todoList[index].done = false) : (this.todoList[index].done = true);
+         console.log(this.todoList[index].done);
+      },
    },
 }).mount('#app');
