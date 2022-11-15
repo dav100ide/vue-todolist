@@ -17,10 +17,7 @@ createApp({
                done: false,
             },
          ],
-         newTodo: {
-            text: null,
-            done: false,
-         },
+         newTodoText: null,
       };
    },
    methods: {
@@ -36,7 +33,7 @@ createApp({
                done: false,
             };
             this.todoList.push(newTodo);
-            this.newTodo.text = null;
+            this.newTodoText = null;
          }
       },
       doneSwitch(index) {
