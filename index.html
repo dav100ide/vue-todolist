@@ -26,9 +26,9 @@
                <h1>TODO LIST</h1>
             </header>
             <!-- todo form -->
-            <form @submit.prevent class="todo-form">
+            <form class="todo-form">
                <input type="text" v-model="newTodo.text" placeholder="inserisci todo" class="p-2 rounded me-2" required />
-               <button type="submit" class="px-3 rounded btn-enter" @click="addTodo">ENTER</button>
+               <button type="submit" class="px-3 rounded btn-enter" @click="addTodo(newTodo.text)">ENTER</button>
             </form>
             <!-- /todo form -->
             <!-- todo list -->

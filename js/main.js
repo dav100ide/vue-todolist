@@ -18,7 +18,7 @@ createApp({
             },
          ],
          newTodo: {
-            text: '',
+            text: null,
             done: false,
          },
       };
@@ -28,9 +28,13 @@ createApp({
       removeTodo(index) {
          this.todoList.splice(index, 1);
       },
-      addTodo() {
-         this.todoList.push(this.newTodo);
-         console.log(this.newTodo);
+      addTodo(text) {
+         const newTodo = {
+            text: text,
+            done: false,
+         };
+         this.todoList.push(newTodo);
+         this.newTodo.text = null;
       },
    },
 }).mount('#app');
