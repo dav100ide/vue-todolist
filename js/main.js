@@ -29,17 +29,15 @@ createApp({
          this.todoList.splice(index, 1);
       },
       addTodo(text) {
-         const newTodo = {
-            text: text,
-            done: false,
-         };
-         this.todoList.push(newTodo);
-         this.newTodo.text = null;
+         if (text !== null) {
+            const newTodo = {
+               text: text,
+               done: false,
+            };
+            this.todoList.push(newTodo);
+            this.newTodo.text = null;
+         }
       },
-      doneSwitch(index) {
-         let doneStatus = this.todoList[index].done;
-         doneStatus === true ? (doneStatus = false) : (doneStatus = true);
-         console.log(doneStatus);
-      },
+      doneSwitch(index) {},
    },
 }).mount('#app');

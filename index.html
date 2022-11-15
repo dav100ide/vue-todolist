@@ -26,20 +26,23 @@
                <h1>TODO LIST</h1>
             </header>
             <!-- todo form -->
-            <form class="todo-form">
-               <input type="text" v-model="newTodo.text" placeholder="inserisci todo" class="p-2 rounded me-2" required />
+            <form class="todo-form" @submit.prevent>
+               <input type="text" v-model="newTodo.text" placeholder="inserisci todo" class="p-2 rounded me-2" />
                <button type="submit" class="px-3 rounded btn-enter" @click="addTodo(newTodo.text)">ENTER</button>
             </form>
             <!-- /todo form -->
             <!-- todo list -->
-            <ul class="todo-list m-2">
+            <ul v-if="todoList.length > 0" class="todo-list m-2">
                <!-- todo list item -->
                <li v-for="(todo, index) in todoList" class="d-flex align-items-center justify-content-between">
-                  <div class="todo-text" :class="{'text-decoration-line-through': !todo.done}" @click="doneSwitch(index)">{{todo.text}}</div>
+                  <div class="todo-text" :class="{'text-decoration-line-through': todo.done}" @click="doneSwitch(index)">{{todo.text}}</div>
                   <i class="fa-solid fa-xmark | todo-icon" @click="removeTodo(index)"></i>
                </li>
                <!-- /todo list item -->
             </ul>
+            <!-- messaggio quando non ci sono i todo -->
+            <h2 v-else class="text-center">NON CI SONO I TODO</h2>
+            <!-- /messaggio quando non ci sono i todo -->
             <!-- /todo list -->
          </div>
       </div>
