@@ -33,7 +33,10 @@
             <!-- /todo form -->
             <!-- todo list -->
             <ul class="todo-list m-2">
-               <li v-for="todo in todoList" class="">ciao</li>
+               <li v-for="todo in todoList" class="d-flex align-items-center justify-content-between">
+                  <div class="todo-text" :class="{'text-decoration-line-through': !todo.done}">{{todo.text}}</div>
+                  <i class="fa-solid fa-xmark"></i>
+               </li>
             </ul>
             <!-- /todo list -->
          </div>

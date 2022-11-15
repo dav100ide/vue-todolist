@@ -10,7 +10,7 @@ createApp({
             },
             {
                text: 'allenarsi in palestra',
-               done: false,
+               done: true,
             },
             {
                text: 'uscire il cane',
