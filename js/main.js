@@ -21,5 +21,8 @@ createApp({
    },
    methods: {
       // metodi vue js
+      removeTodo(index) {
+         this.todoList.splice(index, 1);
+      },
    },
 }).mount('#app');

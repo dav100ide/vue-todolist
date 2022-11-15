@@ -53,6 +53,11 @@ body {
 .todo-list li:not(:last-child) {
    margin-bottom: 0.5rem;
 }
+/* todo list item */
+.todo-text,
+.todo-icon {
+   cursor: pointer;
+}
 /* buttone */
 .btn-enter {
    align-items: center;
