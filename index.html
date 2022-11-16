@@ -26,16 +26,16 @@
                <h1>TODO LIST</h1>
             </header>
             <!-- todo form -->
-            <form class="todo-form" @submit.prevent>
+            <form class="todo-form" @submit.prevent="addTodo">
                <input type="text" v-model="newTodoText" placeholder="inserisci todo" class="p-2 rounded me-2" />
-               <button type="submit" class="px-3 rounded btn-enter" @click="addTodo(newTodoText)">ENTER</button>
+               <button type="submit" class="px-3 rounded btn-enter" @click="addTodo">ENTER</button>
             </form>
             <!-- /todo form -->
             <!-- todo list -->
             <ul v-if="todoList.length > 0" class="todo-list m-2">
                <!-- todo list item -->
                <li v-for="(todo, index) in todoList" class="d-flex align-items-center justify-content-between">
-                  <div class="todo-text" :class="{'text-decoration-line-through': todo.done}" @click="doneSwitch(index)">{{todo.text}}</div>
+                  <span class="todo-text" :class="{'text-decoration-line-through': todo.done}" @click="doneSwitch(index)">{{todo.text}}</span>
                   <i class="fa-solid fa-xmark | todo-icon" @click="removeTodo(index)"></i>
                </li>
                <!-- /todo list item -->

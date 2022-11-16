@@ -25,11 +25,11 @@ createApp({
       removeTodo(index) {
          this.todoList.splice(index, 1);
       },
-      addTodo(text) {
-         if (text !== null) {
+      addTodo() {
+         if (this.newTodoText !== null) {
             //input validation
             const newTodo = {
-               text: text,
+               text: this.newTodoText,
                done: false,
             };
             this.todoList.push(newTodo);
